@@ -1,11 +1,14 @@
 #include <stdio.h>
 
-int main(){
+int main()
+{
 
-//Prints strings with 0 , 2 , and 6 indentations
+    //Prints strings with 0 , 2 , and 6 indentations
 
-printf("To be, or not to be: \n			that is the question. \n						--Hamlet\n");
+    printf("To be, or not ot be:\n		that is the question.\n							-- Hamlet\n");
 
-//Finishes main()
-return 0;
+    // I believe it is "to be" I copied the exact example on the instructions
+
+    //Finishes main()
+    return 0;
 }
