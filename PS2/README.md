@@ -37,7 +37,7 @@ The Problem Set 1.1 covered using a single printf() statement to ouput 3 lines o
 clang ProblemSet2.1.c -o ProblemSet2.1.c
 To run the compiled HelloWorld.c program, use:
 
-./ProblemSet2.1.c
+./a.out
 
 ### Acknowledgement:
 I used the information provided in class by my teacher, Akito van Troyer.
