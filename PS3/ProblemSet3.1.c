@@ -6,7 +6,7 @@
 int main () {
 
     // Declaration of variables
-    char loudness = ('F')* -1.f; // ASCII 'F' = 70
+    char loudness = ('F')* -1; // ASCII 'F' = 70
     float loudnessValue = (float) loudness;
 
     float amp = pow(10, loudnessValue/20);

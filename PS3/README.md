@@ -40,7 +40,7 @@ To build ProblemSet3.1, 3.2, and 3.3, use:
 	 clang ProblemSet3.3.c -o ProblemSet3.3
 	 
 
-To run the compiled ProblemSet3.1 program, use: 
+To run the compiled ProblemSet3.1, 3.2, and 3.3 programs, use: 
 
 	 ./ProblemSet3.1
 	 ./ProblemSet3.2
