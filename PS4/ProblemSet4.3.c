@@ -29,25 +29,17 @@ void increment(){
 
 
 int main (){
+    int i;
 
     //Format of the header
     printf("local| sint| global\n"
     "---------------------\n");
 
-    // I tried calling increment on a for loop but it didn't work
-    // Calls increment function 10 times
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
-    increment();
+    //Calls increment 10 times
+    for (i = 0; i <= 9; i++){
+        increment();
 
-
+    }
     //Ends main function
     return 0;
 }
