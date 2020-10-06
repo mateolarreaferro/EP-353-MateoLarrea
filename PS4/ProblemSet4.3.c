@@ -19,8 +19,7 @@ void increment(){
     //Correct way of format (no white space)
     printf("%d|\t%d|\t%d\n",local, sint, global);
 
-    //Makes it look like requested on github (using visual studio code terminal)
-    
+    //Makes output look like the github output (using visual studio code terminal)
     //printf("  %d  |\t%d  |\t%d\n",local, sint, global);
 
     local += 1;
@@ -32,7 +31,8 @@ void increment(){
 int main (){
 
     //Format of the header
-    printf("local| sint| global\n---------------------\n");
+    printf("local| sint| global\n"
+    "---------------------\n");
 
     // I tried calling increment on a for loop but it didn't work
     // Calls increment function 10 times

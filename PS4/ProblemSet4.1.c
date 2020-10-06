@@ -10,7 +10,7 @@ int main (){
     FILE *f2;
     int c;
 
-    //Open and Create Files
+    //Opens f1 and creates f2 file
     f1 = fopen("LoremIpsum.txt", "r");
     f2 = fopen("lOREMiPSUM2.txt", "w");
 
