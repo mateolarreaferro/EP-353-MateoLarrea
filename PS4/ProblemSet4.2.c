@@ -17,8 +17,6 @@ int sumup(int number);
    
 int main() {
     
-
-    
     printf ("Enter a positive integer: \n");
     //User's input =  int number
     scanf("%d", &number);

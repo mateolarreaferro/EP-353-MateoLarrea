@@ -24,7 +24,7 @@ void increment(){
 
     local += 1;
     sint += 1;
-    global +=1;
+    global += 1;
 }
 
 
