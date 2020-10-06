@@ -35,6 +35,7 @@ int main (){
         fputc(c, f2);
     }
         //Takes into account spaces between words (for readability)
+        //Please comment this else if statement if spacing is not required
         else if (c == 32) {
         c = ' ';
         fputc(c, f2);
