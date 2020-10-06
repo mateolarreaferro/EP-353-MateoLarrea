@@ -26,20 +26,22 @@ int main (){
         //Upper case to lower case
         if (c >= 'A' && c <= 'Z'){
         c = c - 'A' + 'a';
-        fputc(c,f2); 
+        
     }   
         //Lower case to upper case
          else if ((c >= 'a' && c <= 'z')) {
 
         c = c - 'a' + 'A';
-        fputc(c, f2);
+        
     }
         //Takes into account spaces between words (for readability)
         //Please comment this else if statement if spacing is not required
         else if (c == 32) {
         c = ' ';
-        fputc(c, f2);
+
+        
     }   
+        fputc(c,f2);
     
     }
 
