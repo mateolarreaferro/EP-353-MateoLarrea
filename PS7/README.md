@@ -2,7 +2,7 @@
 
 ### Problem Set 7:
 
-Arrays + Strings + Command Line Arguments 
+Memory and Advanced Data Types
 
 ### Submitted by:
 Mateo Larrea
@@ -23,10 +23,9 @@ EP-353
 4. ProblemSet5.7.c
 
 ### Purpose:
-The purpose of this problem set was to understand how to work with arrays, strings, and command line arguments. 
+The purpose of this problem set is divided in two parts: 1) Work with functions of stdlib.h in order to manage memory in C. 2) Work with advanced data types to make more complex data structures.
 ### Description:
-**Problem Set 6.1** consisted in asking the user for input of MIDI data to then create a function that contrains the value to a range of 0-127. This is achieved by using pointers  **Problem Set 6.2** consisted in using the user's input to initialize an array of size 8. This excercise was focused in passing pointers into functions and out. Finally, **Problem Set 6.3** consisted in inputing a string and then reverse the order of its elements into a new string using pointer arithmetic. 
-
+**Problem Set 7.1** consisted in asking the user to input numbers that then would be averaged. The user could input any amount of numbers from 0 ~ 100. This problem set used malloc and realloc to change the size of the array taking into account the amount of numbers that the user enters. **Problem Set 7.2** consisted in using the user's input to input a string to then copy it into a new one.Finally, **Problem Set 7.3** consisted in asking the user to input values that would then be stored in a structure named Note.
 
 
 ### Build and Run Commands:
@@ -44,4 +43,4 @@ To run the compiled ProblemSet7.1, 7.2, and 7.3 programs, use:
 	 ./ProblemSet7.3
 
 ### Acknowledgement:
-I used the information provided in class by my teacher, Akito van Troyer.
+I used the information provided in class by my teacher, Akito van Troyer, a tip by Pedro Sodre, and a couple of guides on strings provided by Gabriel Ball.
