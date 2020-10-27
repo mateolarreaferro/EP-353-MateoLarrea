@@ -20,7 +20,7 @@ EP-353
 1. README.md
 2. ProblemSet7.1.c
 3. ProblemSet7.2.c
-4. ProblemSet5.7.c
+4. ProblemSet7.3.c
 
 ### Purpose:
 The purpose of this problem set is divided in two parts: 1) Work with functions of stdlib.h in order to manage memory in C. 2) Work with advanced data types to make more complex data structures.
