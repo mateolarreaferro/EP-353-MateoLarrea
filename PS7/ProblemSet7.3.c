@@ -21,16 +21,16 @@ typedef struct Note Note;
 
 //Function Protoype:
 
-void printNote(char *values, Note Note);
+void printNote(Note *values);
 
 //Function Declaration:
 
-void printNote(char *values, Note Note){
+void printNote(Note *values){
 
 	printf("The MIDI Note has: \n");
-	printf("Pitch -> %i\n", Note.pitch);
-	printf("Velocity -> %i\n", Note.velocity);
-	printf("Channel -> %i\n", Note.channel);
+	printf("Pitch -> %d\n", values->pitch);
+	printf("Velocity -> %d\n", values->velocity);
+	printf("Channel -> %d\n", values->channel);
 }
 
 
@@ -46,20 +46,27 @@ int main(){
 		return 1;
 	}
 
-	Note inputs;
+	
 
 
 
 	// Ask the user to input the values for the pitch, velocity, and channel members of the Note struct.
-	//PITCH, VELOCITY, CHANNEL
-	printf("Please enter a Pitch, Velocity and Channel value:  \n");
-	scanf("%c", &inputs.pitch);
-	scanf("%c", &inputs.velocity);
-	scanf("%c", &inputs.channel);
+	
+	//PITCH
+	printf("Please enter a Pitch value:   \n");
+	scanf("%hhu", &values->pitch);
+
+	//VELOCITY
+	printf("Please enter a Velocity value:   \n");
+	scanf("%hhu", &values->velocity);
+
+	//CHANNEL
+	printf("Please enter a Channel value:   \n");
+	scanf("%hhu", &values->channel);
 
 	//Call Function 
 
-	printNote(char *values, Note Note);
+	printNote(values);
 	
 
 
