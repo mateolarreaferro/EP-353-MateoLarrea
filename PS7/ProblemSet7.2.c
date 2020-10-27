@@ -25,19 +25,19 @@
 
 	int main(){
 		
-		// Ask the user to input a string in the main function to pass into the copyString function.
+	// Ask the user to input a string in the main function to pass into the copyString function.
 
-		char * input = malloc(50 * sizeof(char));
+	char * input = malloc(50 * sizeof(char));
 
-		copyString(input);
+	copyString(input);
 
-		// Print out the returned value from the copyString function to verify that the copying was successful.
+	// Print out the returned value from the copyString function to verify that the copying was successful.
 
-		printf("The copy is: %s\n", input);
+	printf("The copy is: %s\n", input);
 
 
-		free(input);
-		return 0;
+	free(input);
+	return 0;
 
 	}
 
