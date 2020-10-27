@@ -37,7 +37,7 @@ int main(){
 
 	if (inputs == 0 || size > maxArrayLength){
 
-		break; //maybe something else
+		break; //maybe something else (Akito, is there a better option?)
 		}
 	}
 
@@ -52,7 +52,9 @@ int main(){
 
 	sumofElements += arr[i];
 
-}
+	}
+	
+	
 	size = size - 1; //This ignores the 0 or the 100th number
 	float average = (float)sumofElements / size;
 
@@ -60,10 +62,12 @@ int main(){
 	// Print out the result of averaging.
 	printf("The average of all of the numbers entered in the array is %3.2f\n",average);
 
-
+	//Free Space of arr
 	free(arr);
+
+
 	return 0;
-  }
+}
 
 
 
