@@ -44,9 +44,9 @@ The purpose of this problem set is to experiment with audio files in C. It is fo
 
 To build ProblemSet8.1, 8.2, and 8.3, use:
 
-	 clang ProblemSet8.1.c -lProblemSet7.1
-	 clang ProblemSet7.2.c -lProblemSet7.2
-	 clang ProblemSet5.7.c -lProblemSet7.3
+	 clang ProblemSet8.1.c -lsndfile
+	 clang ProblemSet7.2.c -lsndfile
+	 clang ProblemSet5.7.c -lsndfile
 	 
 
 To run the compiled ProblemSet8.1, 8.2, and 8.3 programs, use: 
