@@ -1,4 +1,5 @@
-// Problem Set 8.1: File I/O with libsndfile
+
+// Problem 8.1: File I/O with libsndfile 1
 // Write a program that reads sine.wav (included in the problem set folder) and extends the duration to 5 seconds.
 
 //Required Libraries:
@@ -10,66 +11,73 @@
 
 
 
-const int bufferSize= 4096; //Arbitrary
 
 
-int main(){
-
-
-    //Variables
-    SNDFILE *sndFile;
-    SF_INFO sfInfo;
-
-    //Write***
-    SNDFILE *outFile;
-
-
-    //This is where we are going to store the data of the audio file
-    float buffer[bufferSize];
+// You must use libsndfile for this problem set.
 
 
 
-    //Read sound file (But before clear the memory of sfInfo)
-    memset(&sfInfo, 0, sizeof(SF_INFO)); //Free sfInfo and use 0
+#define kBufferSize 4096
 
-    //Open
-    sndFile = sf_open("sine.wav", SFM_READ, &sfInfo); //File name, mode, &sfInfo (contains the content = sample rate,....)
+void changeDuration(float *buffer, int numsamples);
+void changeDuration(float *buffer, int numsamples) {
+    for (int i = 0; i < numsamples; i++)
+    {
+        //Pseudo code:   time = SF_Info.frames/SF_INFO * 5
+		printf("New duration is: \n");
+    }
+}
 
-   
-    //Check if it was able to open
-    if(!sndFile) return 1;
+int main() 
+{
 
+    SNDFILE *inFile = NULL, *outFile = NULL; //pointers to a sound files
+    SF_INFO sfInfo; //info about soundfile
 
-    // //Print data
+    float buffer[kBufferSize]; //Buffer for holding samples
 
-    printf("Sample Rate is: %d\n", sfInfo.samplerate);
-    printf("Channels: %d\n", sfInfo.channels);
-    printf("Number of Frames: %lld\n", sfInfo.frames);
-    printf("Time is: %2.2f\n", (double) sfInfo.frames/sfInfo.samplerate);
+    //Initialize SF_INFO with 0s (memset is in string.h library)
+	memset(&sfInfo, 0, sizeof(SF_INFO));
 
+    inFile = sf_open("sine.wav", SFM_READ, &sfInfo);
+    if (!inFile)
+    {
+        printf ("Couldn't open sine.wav\n");
+        return 1;
+    }
 
-    //Open up new file 
-    // sfInfo.format = SF_FORMAT_AIFF | SF_FORMAT_PCM_16;
+	//Check if the file format is in good shape
+  	if(!sf_format_check(&sfInfo)){	
+    sf_close(inFile);
+		printf("Invalid encoding\n");
+		return 1;
+	}
+    
+	// Write out the resulting 5 second sine wave to the sine5.wav file in the same directory.
     outFile = sf_open("sine5.wav", SFM_WRITE, &sfInfo);
 
+	//Check for errors
+    if (!outFile)
+    {	
+        printf ("Couldn't open sine5.wav");
+        return 1;
+    }
 
-
-    int readCount = 0;
-
-    while((readCount = sf_read_float(sndFile, buffer, bufferSize)) > 0) {
-        printf("%d\n", readCount);
-        sf_write_float(outFile, buffer, readCount);
+    int readcount;
+    while((readcount = sf_read_float(inFile, buffer, kBufferSize)) > 0) 
+    {
+        printf("%d\n",readcount);
+        changeDuration(buffer, readcount);
+        sf_write_float(outFile, buffer, readcount); 
     }
 
 
-
-    //Close file
-    sf_close(sndFile);
+	//Close Files
+    sf_close(inFile);
     sf_close(outFile);
 
+    return 0;
 
-	return 0;
 }
-
 
 
