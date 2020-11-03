@@ -33,7 +33,7 @@ EP-353
 ### Purpose:
 The purpose of this problem set is to experiment with audio files in C. It is focused on using libsndfile to modify certain parameters of the file.
 ### Description:
-**Problem Set 8.1** consisted in asking the user to input numbers that then would be averaged. The user could input any amount of numbers from 0 ~ 100. This problem set used malloc and realloc to change the size of the array taking into account the amount of numbers that the user enters. **Problem Set 8.2** consisted in using the user's input to input a string to then copy it into a new one.Finally, **Problem Set 8.3** consisted in asking the user to input values that would then be stored in a structure named Note.
+**Problem Set 8.1** consisted in using the sine.wav file provided in the folder to create a new one that had a duration of 5 seconds instead of 1. **Problem Set 8.2** consisted in opening sine.wav and tri.wav to create a new file names sintri.wav that mixes both of those files. Finally, **Problem Set 8.3** consisted in reversing sine.wav into a new file named ReverseSN.wav
 
 
 ### Build and Run Commands:
