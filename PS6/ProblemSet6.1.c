@@ -4,14 +4,16 @@
 
 //Function Prototype
 //function called adjustMIDIRange that takes in the input from the user and returns nothing
-void adjustMIDIRange(int *midi);
+void adjustMIDIRange(unsigned char *midi);
 
 int main()
 {	
-	int midi;
+	unsigned char midi;
+	int input;
 	// Asks user to input an integer number
 	printf("Please enter an integer: \n");
-	scanf("%d", &midi);
+	scanf("%d", &input);
+	midi = (unsigned char)input;
 
 	adjustMIDIRange(&midi);
 	
@@ -21,7 +23,7 @@ int main()
 }
 
 //Function Declaration
-  void adjustMIDIRange(int *midi){
+  void adjustMIDIRange(unsigned char *midi){
 	//0 if the user's integer input is less than 0.
 	if (*midi < 0){
 		*midi = 0;

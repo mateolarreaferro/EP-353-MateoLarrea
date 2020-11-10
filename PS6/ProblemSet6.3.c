@@ -24,12 +24,12 @@ char ch = 0;
   
     // begin' and 'end' to the beggining of the string
     begin = string1; 
-    end = string1; 
+    end = string1 + lenght -1; 
   
-    // Move the end to the last element of the string
-    for (int i = 0; i < lenght - 1; i++) {
-        end++; 
-    }
+    // // Move the end to the last element of the string
+    // for (int i = 0; i < lenght - 1; i++) {
+    //     end++; 
+    // }
 
     // Swap the last and first index using begin and end 
     for (int i = 0; i < lenght / 2; i++) { 

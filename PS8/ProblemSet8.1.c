@@ -11,30 +11,23 @@
 
 
 
-
-
 // You must use libsndfile for this problem set.
 
 
-
+//Number is arbitrary 
 #define kBufferSize 4096
 
-void changeDuration(float *buffer, int numsamples);
-void changeDuration(float *buffer, int numsamples) {
-    for (int i = 0; i < numsamples; i++)
-    {
-        //Pseudo code:   time = SF_Info.frames/SF_INFO * 5
-		printf("New duration is: \n");
-    }
-}
 
 int main() 
 {
 
-    SNDFILE *inFile = NULL, *outFile = NULL; //pointers to a sound files
+    SNDFILE *inFile = NULL, *outFile = NULL; //pointers to a sound files (Initialized as NULL)
     SF_INFO sfInfo; //info about soundfile
 
-    float buffer[kBufferSize]; //Buffer for holding samples
+    float buffer[kBufferSize]; //Buffer for holding samples (Array that holds floats with the size of kBufferSize)
+
+    //Pointer
+    float *arr = NULL;
 
     //Initialize SF_INFO with 0s (memset is in string.h library)
 	memset(&sfInfo, 0, sizeof(SF_INFO));
@@ -64,11 +57,30 @@ int main()
     }
 
     int readcount;
-    while((readcount = sf_read_float(inFile, buffer, kBufferSize)) > 0) 
+    int sizeofArray = 0;
+    
+    while((readcount = sf_read_float(inFile, buffer, kBufferSize)) > 0) //Uses sf_read_float function
     {
-        printf("%d\n",readcount);
-        changeDuration(buffer, readcount);
-        sf_write_float(outFile, buffer, readcount); 
+        
+        // printf("%d\n",readcount);
+       
+        arr = realloc(arr, (sizeofArray + readcount)*sizeof(float));
+        
+        for (int i = 0; i < readcount; i++){
+            arr[sizeofArray+i] = buffer[i];
+
+        }
+        sizeofArray += readcount; 
+
+    
+        
+    }
+
+    //Makes it 5 times longer (writes it 5 times)
+    for(int a = 0; a < 5; a++){
+
+        sf_write_float(outFile, arr, sizeofArray);
+
     }
 
 

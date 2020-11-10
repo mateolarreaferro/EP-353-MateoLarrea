@@ -33,7 +33,9 @@ EP-353
 ### Purpose:
 The purpose of this problem set is to experiment with audio files in C. It is focused on using libsndfile to modify certain parameters of the file.
 ### Description:
-**Problem Set 8.1** consisted in using the sine.wav file provided in the folder to create a new one that had a duration of 5 seconds instead of 1. **Problem Set 8.2** consisted in opening sine.wav and tri.wav to create a new file names sintri.wav that mixes both of those files. Finally, **Problem Set 8.3** consisted in reversing sine.wav into a new file named ReverseSN.wav
+**Problem Set 8.1** consisted in using the sine.wav file provided in the folder to create a new one that had a duration of 5 seconds instead of 1. **Problem Set 8.2** consisted in opening sine.wav and tri.wav to create a new file names sintri.wav that mixes both of those files 5 times. Finally, **Problem Set 8.3** consisted in reversing sine.wav into a new file named ReverseSN.wav
+
+
 
 
 ### Build and Run Commands:
@@ -45,8 +47,8 @@ The purpose of this problem set is to experiment with audio files in C. It is fo
 To build ProblemSet8.1, 8.2, and 8.3, use:
 
 	 clang ProblemSet8.1.c -lsndfile
-	 clang ProblemSet7.2.c -lsndfile
-	 clang ProblemSet5.7.c -lsndfile
+	 clang ProblemSet8.2.c -lsndfile
+	 clang ProblemSet8.3.c -lsndfile
 	 
 
 To run the compiled ProblemSet8.1, 8.2, and 8.3 programs, use: 
@@ -55,4 +57,4 @@ To run the compiled ProblemSet8.1, 8.2, and 8.3 programs, use:
 	
 
 ### Acknowledgement:
-I used the information provided in class by my teacher, Akito van Troyer.
+I used the information provided in class by my teacher, Akito van Troyer. Also, Pedro helped me with PS8.2.
