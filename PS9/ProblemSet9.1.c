@@ -29,99 +29,73 @@
 int main(){
 
 
-//Variables 
+    //Variables 
 
-SNDFILE *myfile; //File
-SF_INFO fileInfo; //Information of the File
-double *buffer; //Where to store
-
-
-//Parameters of the noise 
-double randomAmp = (float)rand()/RAND_MAX;
-double amplitude = randomAmp;
-
-double randomFreq
-double frequency = 440.0; //in Hz
-//Computer doesn't read seconds --> Frequency needs to be transformed
-frequency = frequency / kSampleRate;
-
-//Allocate using malloc
-
-buffer = calloc(kNumFrames * kNumChannels, sizeof(double)); //Frames represent length of the file
-
-//Check
-if (!buffer){
-    printf("Error\n");
-    return 1;
-}
+    SNDFILE *myfile; //File
+    SF_INFO fileInfo; //Information of the File
+    double *buffer; //Where to store
 
 
-//Memset to set all of the memory space to 0
+    //Parameters of the noise 
+    double amp = 0.25;
+    double freq = 440.0; //Hz
 
-memset(&fileInfo, 0, sizeof(SF_INFO));
+    //Computer doesn't read seconds --> Frequency needs to be transformed
+    double frequency = freq / kSampleRate;
 
+    //Allocate using malloc
 
-//setting Properties of the Audio File
-//Assigns
+    buffer = malloc(kNumFrames * kNumChannels * sizeof(double)); //Frames represent length of the file
 
-fileInfo.samplerate = kSampleRate;
-fileInfo.frames = kNumFrames;
-fileInfo.channels = kNumChannels;
-fileInfo.format = kFormat;
-
-
-//Time to open the file!
-
-myfile = sf_open (kFileName, SFM_WRITE, &fileInfo);
-
-//Check
-if (!myfile){
-    printf("Error!\n");
-    return 1;
-}
-
-//Time to Write!
-
-for (int t = 0; t < kNumFrames; t++){ //t is current time
-
-    for (int h = 0; i < kSampleRate; i++){
-        buffer[h] = (rand()/ (float)RAND_MAX - 0.5) *2;
+    //Check
+    if (!buffer){
+        printf("Error\n");
+        return 1;
     }
 
 
-    //Put each harmonic into the buffer
-      for (int a = 0; a <kNumChannels; a++){
-        buffer [kNumChannels * t + a] += sample; //Add all of it and initialize buffer to 0 with calloc
+    //Memset to set all of the memory space to 0
+
+    memset(&fileInfo, 0, sizeof(SF_INFO));
+
+
+    //setting Properties of the Audio File
+    //Assigns
+
+    fileInfo.samplerate = kSampleRate;
+    fileInfo.frames = kNumFrames;
+    fileInfo.channels = kNumChannels;
+    fileInfo.format = kFormat;
+
+
+    //Time to open the file!
+
+    myfile = sf_open (kFileName, SFM_WRITE, &fileInfo);
+
+    //Check
+    if (!myfile){
+        printf("Error!\n");
+        return 1;
     }
-    }
 
-}
+    //Time to Write!
+    //Add random values to the buffer (NOISE)
 
-
-
-//Finally --> Write Sine Wave into Audio File
-
-sf_count_t count = sf_write_float(myfile, buffer, kNumFrames * kNumChannels);
-
-if (count != kNumChannels * kNumFrames){
-    printf("Error!\n");
+        for (int i = 0; i < kSampleRate; i++) {
+            buffer[i] = (rand()/(float)RAND_MAX - 0.5) *2;
+                }
     
-}
+    // Write to new file myFile
+        sf_count_t count = sf_write_double(myfile, buffer, fileInfo.channels * kNumFrames);
 
+    // Check 
+        if(count != fileInfo.channels * kNumFrames){
+        puts(sf_strerror(myfile));
+    }
 
-//Close
-sf_close(myfile);
-free(buffer);
-
-
-
-
-
-
-
-
-
-
-
-return 0;
+    //Close sound file and buffer
+        sf_close(myfile);
+        free(buffer);
+    
+        return 0;
 }
