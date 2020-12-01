@@ -6,7 +6,7 @@ Sensorem: sensors that make harmony, melody, and rhythm.
 
 ## In just a sentence or two, summarize your project. (E.g., "My project is about creating a web-based synthesizer.")
 
-My project is about creating a midi controller/musical instrument that allows the user to create and modify music using sensors and hardware.
+My project is about creating a MIDI controller/musical instrument that allows the user to create and modify music using sensors and hardware.
 
 ## In a paragraph or more, detail your project. What will your software do? What features will it have? How will it be executed?
 
